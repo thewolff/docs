@@ -12,8 +12,6 @@ format: `json`, `xml`<sup>1</sup>, `atom`<sup>2</sup>, `rss`<sup>2</sup>
 
 **Example URL:** http://tweetriver.com/bdainton/kindle.json
 
-    $ curl http://tweetriver.com/bdainton/kindle.json
-
 ## Standard Parameters
 
 <table>
@@ -136,6 +134,297 @@ Twitter status entity.
   </tr>
 </table>
 
+
+## Example Request
+
+    $ curl http://tweetriver.com/bdainton/kindle.json
+
+```json
+[
+ // this is a Tweet/Status response
+ // https://dev.twitter.com/docs/api/1/get/statuses/show/%3Aid
+ {
+    // data added by Mass Relevance
+    // mostly useless or for backwards compatibility
+    "chained_stream_id": null,
+    "adhoc_for_stream_id": null,
+    "requeued": null,
+    "entity_id": "200249547354669056", // == id_str
+    "order_id": "200249547354669056",  // == id_str
+    "score": "200249547354669056",     // == id_str
+
+    "created_at": "Wed May 09 15:43:07 +0000 2012",
+    "id": 200249547354669060,
+    "id_str": "200249547354669056",
+    "text": "Love this! @NatalieCoughlin Profile - Swimming Video | NBC Olympics http://t.co/zgkQdeyG #2012Olympics #Olympics",
+    "source": "<a href=\"http://twitter.com/tweetbutton\" rel=\"nofollow\">Tweet Button</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+        "id": 20971136,
+        "id_str": "20971136",
+        "name": "Megan Coughlin",
+        "screen_name": "MeganCoughlin",
+        "location": "San Francisco, CA",
+        "description": "SMB AE (midwest) at @InsideView, a Sales 2.0 company | Swimming Enthusiast | Gluten-free fanatic | http://www.linkedin.com/in/meganccoughlin ",
+        "url": null,
+        "protected": false,
+        "followers_count": 641,
+        "friends_count": 618,
+        "listed_count": 9,
+        "created_at": "Mon Feb 16 08:38:45 +0000 2009",
+        "favourites_count": 0,
+        "utc_offset": -32400,
+        "time_zone": "Alaska",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 391,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "709397",
+        "profile_background_image_url": "http://a0.twimg.com/images/themes/theme6/bg.gif",
+        "profile_background_image_url_https": "https://si0.twimg.com/images/themes/theme6/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http://a0.twimg.com/profile_images/1780753484/headshot_normal.jpg",
+        "profile_image_url_https": "https://si0.twimg.com/profile_images/1780753484/headshot_normal.jpg",
+        "profile_link_color": "FF3300",
+        "profile_sidebar_border_color": "86A4A6",
+        "profile_sidebar_fill_color": "A0C5C7",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "show_all_inline_media": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweet_count": 3,
+    "entities": {
+        "hashtags": [{
+            "text": "2012Olympics",
+            "indices": [
+            89, 102]
+        }, {
+            "text": "Olympics",
+            "indices": [
+            103, 112]
+        }],
+        "urls": [{
+            "url": "http://t.co/zgkQdeyG",
+            "expanded_url": "http://www.nbcolympics.com/video/swimming/natalie-coughlin-profile-409643.html",
+            "display_url": "nbcolympics.com/video/swimming…",
+            "indices": [
+            68, 88]
+        }],
+        "user_mentions": [{
+            "screen_name": "NatalieCoughlin",
+            "name": "Natalie Coughlin",
+            "id": 26593416,
+            "id_str": "26593416",
+            "indices": [
+            11, 27]
+        }]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false
+},
+
+
+ // this is a Retweet response
+ // it looks exactly like a normal tweet, except that it has the property `retweeted_status`
+ // which is the original content that was retweeted
+ //
+ // https://dev.twitter.com/docs/api/1/get/statuses/show/%3Aid
+ {
+    // data added by Mass Relevance
+    // mostly useless or for backwards compatibility
+    "chained_stream_id": null,
+    "adhoc_for_stream_id": null,
+    "requeued": null,
+    "entity_id": "192338599570702340", // == id_str
+    "order_id": "192338599570702340",  // == id_str
+    "score": "192338599570702340",     // == id_str
+
+    "created_at": "Tue Apr 17 19:47:50 +0000 2012",
+    "id": 192338599570702340,
+    "id_str": "192338599570702336",
+    "text": "RT @brainpicker: \"A fair and balanced guide to choosing between New York and San Francisco\" from @TheMorningNews http://t.co/KXaGg318",
+    "source": "web",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+        "id": 8435702,
+        "id_str": "8435702",
+        "name": "Craig Richards",
+        "screen_name": "donkeyattack",
+        "location": "",
+        "description": "I am the lineman for the county and I work at Twitter",
+        "url": null,
+        "protected": false,
+        "followers_count": 1679,
+        "friends_count": 1011,
+        "listed_count": 47,
+        "created_at": "Sun Aug 26 04:22:08 +0000 2007",
+        "favourites_count": 384,
+        "utc_offset": -18000,
+        "time_zone": "Eastern Time (US & Canada)",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 1893,
+        "lang": "en",
+        "contributors_enabled": true,
+        "is_translator": false,
+        "profile_background_color": "E7C490",
+        "profile_background_image_url": "http://a0.twimg.com/profile_background_images/379104346/Twitter_1544x2000.png",
+        "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/379104346/Twitter_1544x2000.png",
+        "profile_background_tile": true,
+        "profile_image_url": "http://a0.twimg.com/profile_images/1680486414/craig3_bigger_normal.png",
+        "profile_image_url_https": "https://si0.twimg.com/profile_images/1680486414/craig3_bigger_normal.png",
+        "profile_banner_url": "https://si0.twimg.com/brand_banners/donkeyattack/1327518376/live",
+        "profile_link_color": "FF0000",
+        "profile_sidebar_border_color": "E7C490",
+        "profile_sidebar_fill_color": "12E39D",
+        "profile_text_color": "FF03FF",
+        "profile_use_background_image": true,
+        "show_all_inline_media": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+
+    // this is the original tweet that was retweeted
+    // this content is the same as a normal tweet
+    "retweeted_status": {
+        "created_at": "Tue Apr 17 14:01:32 +0000 2012",
+        "id": 192251451500789760,
+        "id_str": "192251451500789760",
+        "text": "\"A fair and balanced guide to choosing between New York and San Francisco\" from @TheMorningNews http://t.co/KXaGg318",
+        "source": "<a href=\"http://bufferapp.com\" rel=\"nofollow\">Buffer</a>",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+            "id": 9207632,
+            "id_str": "9207632",
+            "name": "Maria Popova",
+            "screen_name": "brainpicker",
+            "location": "Brooklyn, NY",
+            "description": "Interestingness hunter-gatherer obsessed with combinatorial creativity. Editor of @brainpickings & @explorer. Bylines for @WiredUK & @TheAtlantic. MIT Fellow.",
+            "url": "http://brainpickings.org",
+            "protected": false,
+            "followers_count": 178020,
+            "friends_count": 307,
+            "listed_count": 10405,
+            "created_at": "Tue Oct 02 14:18:16 +0000 2007",
+            "favourites_count": 12,
+            "utc_offset": -18000,
+            "time_zone": "Eastern Time (US & Canada)",
+            "geo_enabled": true,
+            "verified": false,
+            "statuses_count": 50866,
+            "lang": "en",
+            "contributors_enabled": false,
+            "is_translator": false,
+            "profile_background_color": "FFDB00",
+            "profile_background_image_url": "http://a0.twimg.com/profile_background_images/3864643/bg.jpg",
+            "profile_background_image_url_https": "https://si0.twimg.com/profile_background_images/3864643/bg.jpg",
+            "profile_background_tile": true,
+            "profile_image_url": "http://a0.twimg.com/profile_images/125575833/twitter_normal.jpg",
+            "profile_image_url_https": "https://si0.twimg.com/profile_images/125575833/twitter_normal.jpg",
+            "profile_link_color": "990000",
+            "profile_sidebar_border_color": "EBEAE5",
+            "profile_sidebar_fill_color": "EBEAE5",
+            "profile_text_color": "3F3F3F",
+            "profile_use_background_image": true,
+            "show_all_inline_media": true,
+            "default_profile": false,
+            "default_profile_image": false,
+            "following": null,
+            "follow_request_sent": null,
+            "notifications": null
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "retweet_count": 19,
+        "entities": {
+            "hashtags": [],
+            "urls": [{
+                "url": "http://t.co/KXaGg318",
+                "expanded_url": "http://j.mp/HUBAOn",
+                "display_url": "j.mp/HUBAOn",
+                "indices": [
+                96, 116]
+            }],
+            "user_mentions": [{
+                "screen_name": "TheMorningNews",
+                "name": "The Morning News",
+                "id": 16539190,
+                "id_str": "16539190",
+                "indices": [
+                80, 95]
+            }]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false
+    },
+    "retweet_count": 19,
+    "entities": {
+        "hashtags": [],
+        "urls": [{
+            "url": "http://t.co/KXaGg318",
+            "expanded_url": "http://j.mp/HUBAOn",
+            "display_url": "j.mp/HUBAOn",
+            "indices": [
+            113, 133]
+        }],
+        "user_mentions": [{
+            "screen_name": "brainpicker",
+            "name": "Maria Popova",
+            "id": 9207632,
+            "id_str": "9207632",
+            "indices": [
+            3, 15]
+        }, {
+            "screen_name": "TheMorningNews",
+            "name": "The Morning News",
+            "id": 16539190,
+            "id_str": "16539190",
+            "indices": [
+            97, 112]
+        }]
+    },
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false
+}]
+```
 
 <sup>1</sup>Our docs only cover the `json` API, but the `xml` endpoint supports the same query parameters as the `json` endpoint and a similar response to the `json` endpoint.
 
