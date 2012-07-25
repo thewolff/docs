@@ -107,6 +107,17 @@ Twitter status entity.
 status entity is added to the `in_reply_to` property of a Twitter status
 entity.</td>
   </tr>
+  <tr>
+    <td>
+      <strong>reverse</strong>
+      <br /><span style="color: #999;">optional</span>
+    </td>
+    <td>bit</td>
+    <td>0</td>
+    <td>Reverse the status entities in response to be in chronological order
+(default is reverse chronolical order) so that entities approved earlier
+are on top.</td>
+  </tr>
 </table>
 
 ## Advanced Parameters
