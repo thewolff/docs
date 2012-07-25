@@ -134,6 +134,9 @@ Twitter status entity.
   </tr>
 </table>
 
+## Response
+
+The response is a JSON array. If no tweets are available, then the response will be an empty JSON array. If an error occurs then the response will be empty (whitespace).
 
 ## Example Request
 
