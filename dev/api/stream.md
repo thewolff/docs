@@ -74,7 +74,9 @@ format: `json`, `xml`<sup>1</sup>, `atom`<sup>2</sup>, `rss`<sup>2</sup>
     <td>string</td>
     <td></td>
     <td>
-      Enabled JSONP support. Wraps JSON response with a JavaScript function of given name.
+      Enabled JSONP support. Wraps JSON response with a JavaScript function of given name. `jsonp` is a supported alias.
+      <br /><br />
+      <strong>Example Values:</strong> <pre>myfunction</pre>
       <br /><br />
       <strong>Note:</strong> Only `json` endpoint support
     </td>
