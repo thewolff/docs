@@ -3,7 +3,7 @@
 Developer documentation for the Mass Relevance platform.
 
  * [Overview](/MassRelevance/docs/blob/master/dev/overview.md)
- * [Real-time Dilemma](/MassRelevance/docs/blob/master/dev/realtime.md)
+ * [Realtime](/MassRelevance/docs/blob/master/dev/realtime.md)
  * [API](/MassRelevance/docs/blob/master/dev/api/api.md)
    * [Stream](/MassRelevance/docs/blob/master/dev/api/stream.md) **/:account/:stream_name.json**
      * Authenticated actions
