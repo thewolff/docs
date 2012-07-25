@@ -1,14 +1,13 @@
 # Stream API
 
-Provides approved status entities from a stream sorted from most
-recently approved to least recently approved (essentially reverse chronological order).
+Provides approved status entities from a stream sorted from most recently approved to least recently approved (essentially reverse chronological order).
 
 ## Resource URL
 
 http://tweetriver.com/:account/:stream_name.:format
 
-account: the stream owner's account name (e.g. `bdainton`)
-stream_name: the name of the stream (e.g. `kindle`
+account: the stream owner's account name (e.g. `bdainton`)<br />
+stream_name: the name of the stream (e.g. `kindle`)<br />
 format: `json`, `xml`<sup>1</sup>, `atom`<sup>2</sup>, `rss`<sup>2</sup>
 
 **Example URL:** http://tweetriver.com/bdainton/kindle.json
@@ -87,7 +86,7 @@ format: `json`, `xml`<sup>1</sup>, `atom`<sup>2</sup>, `rss`<sup>2</sup>
       <strong>geo_hint</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
-    <td>integer</td>
+    <td>bit</td>
     <td>0</td>
     <td>
       Adds inferred (if it can be) status entity location from the authoring user's
@@ -102,9 +101,9 @@ Twitter status entity.
       <strong>replies</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
-    <td>integer</td>
+    <td>bit</td>
     <td>0</td>
-    <td></td>
+    <td>Include the status entity that a status entity replied to</td>
   </tr>
 </table>
 
@@ -117,7 +116,7 @@ Twitter status entity.
       <br /><span style="color: #333;">Broadcast Only</span>
       <br /><span style="color: #999;">optional</span>
     </td>
-    <td>integer</td>
+    <td>bit</td>
     <td>0</td>
     <td>
       Removes trailing URLs from the text a status entity.
@@ -139,5 +138,7 @@ Twitter status entity.
 
 
 <sup>1</sup>Our docs only cover the `json` API, but the `xml` endpoint supports the same query parameters as the `json` endpoint and a similar response to the `json` endpoint.
+
 <sup>2</sup>Exclusively for television broadcast. You must not publicly display data from these feeds without consent from Mass Relevance.
+
 <sup>3</sup>Exclusively for television broadcast. You must not use this functionality without consent from Mass Relevance.
