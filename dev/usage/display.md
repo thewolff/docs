@@ -120,7 +120,7 @@ tweet = get_newest_tweet()
 
 # it's a retweet if the tweet object contains
 # the `retweeted_status` property
-is_retweet = tweet.retweeted_status !== null
+is_retweet = tweet.retweeted_status != nil
 
 if is_retweet
   # user that pressed "retweet" button
