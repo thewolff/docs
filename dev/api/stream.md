@@ -91,7 +91,7 @@ format: `json`, `xml`<sup>1</sup>, `atom`<sup>2</sup>, `rss`<sup>2</sup>
 profile information. The data is added the to `geo_hint` property of a
 Twitter status entity.
       <br /><br />
-      <strong>Note:</strong> Only for Twitter statuses
+      <strong>Note:</strong> Only for Twitter statuses. <a href="#geo-hint-object">More info below</a>
     </td>
   </tr>
   <tr>
@@ -101,7 +101,9 @@ Twitter status entity.
     </td>
     <td>bit</td>
     <td>0</td>
-    <td>Include the status entity that a status entity replied to</td>
+    <td>Include the status entity that a status entity replied to. The
+status entity is added to the `in_reply_to` property of a Twitter status
+entity.</td>
   </tr>
 </table>
 
@@ -427,6 +429,21 @@ The response is a JSON array. If no tweets are available, then the response will
     "retweeted": false,
     "possibly_sensitive": false
 }]
+```
+
+### Geo Hint Object
+
+Example of a geo hinted object added on a Twitter status entity
+
+```json
+{
+    "geo_hint": {
+        "country": "US",
+        "state": "CA",
+        "coordinates": [
+          34.0522342, - 118.2436849]
+    }
+}
 ```
 
 <sup>1</sup>Our docs only cover the `json` API, but the `xml` endpoint supports the same query parameters as the `json` endpoint and a similar response to the `json` endpoint.
