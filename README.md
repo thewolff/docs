@@ -23,7 +23,7 @@ Developer documentation for the Mass Relevance platform.
     * [Compare](/MassRelevance/docs/blob/master/dev/api/compare.md) **/compare.json**
  * Using the API
    * [Polling streams](/MassRelevance/docs/blob/master/dev/usage/polling.md)
-   * [Displaying stream entities](/MassRelevance/docs/blob/master/usage/display.md)
+   * [Displaying stream entities](/MassRelevance/docs/blob/master/dev/usage/display.md)
      * Twitter
      * Facebook
      * Custom Messages
