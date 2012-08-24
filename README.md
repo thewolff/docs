@@ -10,6 +10,9 @@ Developer documentation for the Mass Relevance platform.
      * Sources
          * Twitter
          * Facebook
+         * Google+
+         * YouTube
+         * Instagram
          * Custom Messages
     * [Stream Meta](/MassRelevance/docs/blob/master/dev/api/meta.md) **/:account/:stream_name/meta.json**
       * Basic (.full_name, .name, .description, .created_at)
@@ -26,6 +29,9 @@ Developer documentation for the Mass Relevance platform.
    * [Displaying stream entities](/MassRelevance/docs/blob/master/dev/usage/display.md)
      * Twitter
      * Facebook
+     * Google+
+     * YouTube
+     * Instagram
      * Custom Messages
    * [Using meta.json](/MassRelevance/docs/blob/master/dev/api/counts.md)
  * Libraries
