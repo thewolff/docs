@@ -39,7 +39,7 @@ Similar to requesting newer items. After the initial requests, use the
 `entity_id` property of the first status entity returned as the value
 for the `start` param of the next request.
 
-    curl http://tweetriver.com/bdainton/kindle.json?limit=50&since_id=227581759888453632
+    curl http://tweetriver.com/bdainton/kindle.json?limit=50&start=227581759888453632
 
 ## Pseudo code
 
