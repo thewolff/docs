@@ -10,7 +10,7 @@ account: the stream owner's account name (e.g. `bdainton`)<br />
 stream_name: the name of the stream (e.g. `kindle`)<br />
 format: `json`, `xml`<sup>1</sup>
 
-**Example URL:** http://tweetriver.com/bdainton/meta.json
+**Example URL:** http://tweetriver.com/bdainton/kindle/meta.json
 
 ## Parameters
 
