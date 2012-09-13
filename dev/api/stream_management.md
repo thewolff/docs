@@ -53,7 +53,7 @@ id: the stream's id (e.g. `123`)<br />
       <strong>enabled_at</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
-    <td>string</td>
+    <td>timestamp</td>
     <td></td>
     <td>
       Time you want to enable your stream. Defaults to enabled on create.
@@ -64,7 +64,7 @@ id: the stream's id (e.g. `123`)<br />
       <strong>disabled_at</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
-    <td>string</td>
+    <td>timestamp</td>
     <td></td>
     <td>
       Time you want to disable your stream. Defaults to never.
@@ -75,7 +75,7 @@ id: the stream's id (e.g. `123`)<br />
       <strong>disabled</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
-    <td>string</td>
+    <td>boolean</td>
     <td></td>
     <td>
       Creates a disabled stream. Defaults to `false`.
