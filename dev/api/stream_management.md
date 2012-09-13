@@ -50,7 +50,7 @@ id: the stream's id (e.g. `123`)<br />
   </tr>
  </table>
  
- ## Advanced Parameters
+## Advanced Parameters
 
 <table>
   <tr>
