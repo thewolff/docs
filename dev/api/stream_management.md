@@ -27,7 +27,7 @@ Optional Parameters:
 
 You can edit streams:
 
-    curl -X PUT --data "stream[description]=hi;api_key=060c1ece812c38e8c04714ecb201f505" \
+    curl -X PUT --data "stream[description]=hi;api_key=YOUR_API_KEY" \
       http://massrelevance.com/streams/YOUR_STREAM
 
 Which will reply with:
