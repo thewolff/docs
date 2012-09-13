@@ -59,7 +59,7 @@ id: the stream's id (e.g. `123`)<br />
       Stream's description. Defaults to original stream's description.
     </td>
   </tr>
- </table>
+</table>
  
 ## Advanced Parameters
 
