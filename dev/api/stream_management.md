@@ -94,7 +94,7 @@ The response is a JSON hash. See below.
 
 ## Example Request
 
-    curl -X POST --data "name=new-stream;keywords=new keywords;description=my new stream;api_key=YOUR_API_KEY" \
+    $ curl -X POST --data "name=new-stream;keywords=new keywords;description=my new stream;api_key=YOUR_API_KEY" \
       http://massrelevance.com/streams/STREAM_ID/clone
 
 ```json
@@ -132,7 +132,7 @@ PUT http://tweetriver.com/streams/:id
 
 ## Example Request
 
-    curl -X PUT --data "stream[description]=hi;api_key=YOUR_API_KEY" \
+    $ curl -X PUT --data "stream[description]=hi;api_key=YOUR_API_KEY" \
       http://massrelevance.com/streams/YOUR_STREAM
 
 ```json
@@ -147,7 +147,7 @@ DELETE http://tweetriver.com/streams/:id
 
 ## Example Request
 
-    curl --request DELETE -d 'api_key=YOUR_API_KEY' http://massrelevance.com/streams/STREAM_ID
+    $ curl --request DELETE -d 'api_key=YOUR_API_KEY' http://massrelevance.com/streams/STREAM_ID
 
 ```json
 {
