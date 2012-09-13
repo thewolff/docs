@@ -42,4 +42,4 @@ You can delete streams:
 
 Which will reply with:
 
-   {"data":{"public_url":"http://massrelevance.com/YOUR_LOGIN/STREAM_NAME","url":"http://massrelevance.com/streams/STREAM_ID"},"status":"success"} 
+    {"data":{"public_url":"http://massrelevance.com/YOUR_LOGIN/STREAM_NAME","url":"http://massrelevance.com/streams/STREAM_ID"},"status":"success"} 
