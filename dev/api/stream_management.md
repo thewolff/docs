@@ -48,6 +48,11 @@ id: the stream's id (e.g. `123`)<br />
       Stream's description. Defaults to original stream's description.
     </td>
   </tr>
+ </table>
+ 
+ ## Advanced Parameters
+
+<table>
   <tr>
     <td>
       <strong>enabled_at</strong>
@@ -81,16 +86,27 @@ id: the stream's id (e.g. `123`)<br />
       Creates a disabled stream. Defaults to `false`.
     </td>
   </tr>
- </table>
+</table>
+
+## Response
+
+The response is a JSON hash. See below.
+
+## Example Request
 
     curl -X POST --data "name=new-stream;keywords=new keywords;description=my new stream;api_key=YOUR_API_KEY" \
       http://massrelevance.com/streams/STREAM_ID/clone
 
-Make sure you replace `STREAM_ID` with your stream's id.
-
-This will return a JSON response:
-
-    {"data":{"public_url":"http://massrelevance.com/YOUR_LOGIN/new-stream","stream_id":26941,"url":"http://massrelevance.com/streams/NEW_STREAM_ID"},"status":"success"}
+```json
+{
+  "data": {
+    "public_url":"http://massrelevance.com/YOUR_LOGIN/new-stream",
+    "stream_id":26941,
+    "url":"http://massrelevance.com/streams/NEW_STREAM_ID"
+  },
+  "status":"success"
+}
+```
 
 ## Editing streams
 
