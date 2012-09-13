@@ -24,6 +24,7 @@ Developer documentation for the Mass Relevance platform.
     * [Account Streams](/MassRelevance/docs/blob/master/dev/api/account.md) **/:account.json**
     * [Flock](/MassRelevance/docs/blob/master/dev/api/flock.md) **/flock/:account/:flock_name.json**
     * [Compare](/MassRelevance/docs/blob/master/dev/api/compare.md) **/compare.json**
+ * [Stream Management API](/MassRelevance/docs/blob/master/dev/api/stream_management.md)
  * Using the API
    * [Polling streams](/MassRelevance/docs/blob/master/dev/usage/polling.md)
    * [Displaying stream entities](/MassRelevance/docs/blob/master/dev/usage/display.md)
