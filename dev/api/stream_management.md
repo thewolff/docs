@@ -6,7 +6,7 @@ You can clone, edit, and delete streams using your [API Key](http://massrelevanc
 
 ## Resources URL
 
-http://tweetriver.com/streams/:id
+POST http://tweetriver.com/streams/:id
 
 id: the stream's id (e.g. `123`)<br />
 
@@ -108,23 +108,53 @@ The response is a JSON hash. See below.
 }
 ```
 
-## Editing streams
+# Editing streams
 
-You can edit streams:
+## Resources URL
+
+PUT http://tweetriver.com/streams/:id
+
+## Standard Parameters
+
+<table>
+  <tr>
+    <td>
+      <strong>stream[description]</strong>
+      <br /><span style="color: #999;">optional</span>
+    </td>
+    <td>string</td>
+    <td></td>
+    <td>
+      Modify the stream's description.
+    </td>
+  </tr>
+</table>
+
+## Example Request
 
     curl -X PUT --data "stream[description]=hi;api_key=YOUR_API_KEY" \
       http://massrelevance.com/streams/YOUR_STREAM
 
-Which will reply with:
+```json
+{"data":{},"status":"success"}
+```
 
-    {"data":{},"status":"success"}
+# Deleting streams
 
-## Deleting streams
+## Resource URL
 
-You can delete streams:
+DELETE http://tweetriver.com/streams/:id 
+
+## Example Request
 
     curl --request DELETE -d 'api_key=YOUR_API_KEY' http://massrelevance.com/streams/STREAM_ID
 
-Which will reply with:
-
-    {"data":{"public_url":"http://massrelevance.com/YOUR_LOGIN/STREAM_NAME","url":"http://massrelevance.com/streams/STREAM_ID"},"status":"success"} 
+```json
+{
+  "data": {
+    "public_url":"http://massrelevance.com/YOUR_LOGIN/STREAM_NAME",
+    "url":"http://massrelevance.com/streams/STREAM_ID"
+  },
+  "status":"success"
+}
+```
