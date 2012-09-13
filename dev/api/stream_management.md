@@ -17,6 +17,17 @@ id: the stream's id (e.g. `123`)<br />
 <table>
   <tr>
     <td>
+      <strong>api_key</strong>
+      <br /><span style="color: #999;">required</span>
+    </td>
+    <td>string</td>
+    <td></td>
+    <td>
+      Your API key. You can find it here: http://massrelevance.com/profile/edit
+    </td>
+  </tr>
+  <tr>
+    <td>
       <strong>name</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
@@ -119,6 +130,17 @@ PUT http://tweetriver.com/streams/:id
 <table>
   <tr>
     <td>
+      <strong>api_key</strong>
+      <br /><span style="color: #999;">required</span>
+    </td>
+    <td>string</td>
+    <td></td>
+    <td>
+      Your API key. You can find it here: http://massrelevance.com/profile/edit
+    </td>
+  </tr>
+  <tr>
+    <td>
       <strong>stream[description]</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
@@ -144,6 +166,22 @@ PUT http://tweetriver.com/streams/:id
 ## Resource URL
 
 DELETE http://tweetriver.com/streams/:id 
+
+## Standard Parameters
+
+<table>
+  <tr>
+    <td>
+      <strong>api_key</strong>
+      <br /><span style="color: #999;">required</span>
+    </td>
+    <td>string</td>
+    <td></td>
+    <td>
+      Your API key. You can find it here: http://massrelevance.com/profile/edit
+    </td>
+  </tr>
+</table>
 
 ## Example Request
 
