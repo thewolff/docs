@@ -80,10 +80,10 @@ id: the stream's id (e.g. `123`)<br />
       <strong>disabled</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
-    <td>boolean</td>
-    <td></td>
+    <td>bit</td>
+    <td>0</td>
     <td>
-      Creates a disabled stream. Defaults to `false`.
+      Creates a disabled stream.
     </td>
   </tr>
 </table>
