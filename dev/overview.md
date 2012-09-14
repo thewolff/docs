@@ -2,7 +2,7 @@
 
 The Mass Relevance platform is an enterprise social curation platform for building and using **streams**. A stream is a focused, meaningful collection of social content that is aggregated in real time across multiple sources (Twitter, Facebook, Instagram, more), and filtered according to rules you specify.
 
-![Mass Relevance Platform Overview](/MassRelevance/docs/blob/master/dev/img/platform-overview.png "Mass Relevance Platform Marketecture")
+![Mass Relevance Platform Overview](/MassRelevance/docs/blob/master/dev/img/platform-overview.png?raw=true "Mass Relevance Platform Marketecture")
 
 Each **entity** (a social social content item like a Tweet, Facebook post or comment, Instagram photo, etc.) flows into a stream and is, by default, held for moderation. Any entities you approve (either automatically via rules or manually via manual moderation) are immediately visible/usable via our [Stream API](/MassRelevance/docs/blob/master/dev/api/stream.md).
 
