@@ -31,3 +31,5 @@ To enable gzip ensure the HTTP client has the `Accept-Encoding: gzip` header add
 
 Most of the `json` endpoints support JSONP requests. Use `callback` or
 `jsonp` query parameter on `json` endpoints.
+
+**Example URL:** http://tweetriver.com/bdainton/kindle.json?callback=foo
