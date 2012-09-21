@@ -10,11 +10,11 @@ format: `json`
 
 **Example URL:** http://tweetriver.com/flock/howardr/example-flock.json
 
-##Response
+## Response
 
 Reponse is a JSON object. If an error occurs then the response will be empty (whitespace).
 
-###Example Request
+### Example Request
 
     $ curl http://tweetriver.com/flock/howardr/example-flock.json
 
@@ -36,7 +36,9 @@ Reponse is a JSON object. If an error occurs then the response will be empty (wh
 }
 ```
 
-### Thresholds
+### Properties
+
+#### Thresholds
 
 The `thresholds` array within the response is where the the unlocked information is contained. A flock to unlock endpoint may have more than one unlock threshold. We use this when there is more than one payoff.
 
@@ -44,11 +46,11 @@ The items of the threshold are ordered. The order can be specified. We usually o
 
 The two important `threshold` properties are `payload` and `pct`
 
-#### payload
+#### Payload
 
 A `payload` can be specified with any data that can be serialized to JSON. **If the threshold condition has not been met, then the payload will NOT BE included**. When the threshold condition has been met then `pct` === 100
 
-#### pct
+#### Pct
 
 `pct` is an integer value where 0 >= `pct` <= 100. When `pct` === 100, then the threshold condition has been met and there will be a `payload` included in the threshold (if one has been defined).
 
@@ -60,11 +62,11 @@ _*= `pct` acts a little bit differently if the flock endpoint is artificial. i.e
 
 A `name` and a `description` can be defined per threshold. We usually do not use these fields.
 
-**Example**
+## Annotated JSON Response
 
 If there is 10k tweets there will be a video displayed, but there will be a new photo for each 1k of tweets tweeted up to that point. In this case, there would be 10 threshold items in the `thresholds` array.
 
-```json
+```js
 {
   //...
   "thresholds": [
