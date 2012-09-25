@@ -100,6 +100,8 @@ Divide by 1000).
       <br /><br/><strong>Note:</strong> Accepts a string list delimited
 by commas
     </td>
+  <tr>
+  </tr>
     <td>
       <strong>disregard</strong>
       <br /><span style="color: #999;">optional</span>
