@@ -15,7 +15,7 @@ Developer documentation for the Mass Relevance platform.
          * Instagram
          * Custom Messages
     * [Stream Meta](/MassRelevance/docs/blob/master/dev/api/meta.md) **/:account/:stream_name/meta.json**
-      * [Standard (Counts and Activity)](/MassRelevance/docs/blob/master/dev/api/meta.md#standard-meta-information)
+      * [Standard (Counts and Activity)](/MassRelevance/docs/blob/master/dev/api/meta.md#standard)
       * [Top Retweeted Tweets](/MassRelevance/docs/blob/master/dev/api/meta.md#top-retweeted-tweets)
       * [Top Hashtags](/MassRelevance/docs/blob/master/dev/api/meta.md#top-hashtags)
       * [Top Links](/MassRelevance/docs/blob/master/dev/api/meta.md#top-links)
