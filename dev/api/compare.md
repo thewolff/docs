@@ -6,7 +6,7 @@ Provides an entity volume comparison, in percentages, between multiple streams. 
 
 http://tweetriver.com/compare.:format?streams=:full_stream_names
 
-format: `json`, `xml`
+format: `json`, `xml`<br />
 full_stream_names: a comma-delimited set of full stream names in the format of :account/:stream_name (e.g. `bdainton/kindle`)<br />
 
 **Example URL:** http://tweetriver.com/compare.json?streams=bdainton/kindle,MassRelDemo/galaxy-topic1,MassRelDemo/galaxy-topic2
