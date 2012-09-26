@@ -7,7 +7,7 @@ All streams have, by default, a set of meta information captured about them as t
 <strong>counts</strong>:  total number of entities in a stream, split by their moderation state (pending, approved, rejected)<br />
 <strong>activity</strong>: arrays of per-minute, per-hour, and per-day counts<br />
 
-This stream meta information is commonly used to render such visualizations as counters, progress meters, and social poll results.
+This [basic/standard meta information](#standard-meta-information)  is commonly used to render such visualizations as counters, progress meters, and social poll results.
 
 Additionally, on a stream-by-stream basis, there are many advanced features that may be turned on (by Mass Relevance administrators). These features include...
 
@@ -18,7 +18,7 @@ Additionally, on a stream-by-stream basis, there are many advanced features that
 <strong>top topics</strong>: a tally of the number of times that specific keyword sets have been mentioned in the stream<br />
 <strong>top moments</strong>: an extension to top topics, capturing the minutes (moments) when individual topics peaked in activity<br />
 
-This advanced stream meta information is commonly used to render various leaderboard visualizations.
+This [advanced stream meta information](#advanced-meta-information-overview) is commonly used to render various leaderboard visualizations.
 
 ## Resource URL
 
@@ -45,7 +45,7 @@ These parameters control the information you get back in the [basic/standard met
     <td>integer</td>
     <td>60</td>
     <td>
-      Number of minute activity to include
+      Number of minutes of activity to include
       <br /><br/><strong>Note:</strong> Must be > 0
     </td>
   </tr>
@@ -57,7 +57,7 @@ These parameters control the information you get back in the [basic/standard met
     <td>integer</td>
     <td>24</td>
     <td>
-      Number of minute activity to include
+      Number of hours of activity to include
       <br /><br/><strong>Note:</strong> Must be > 0
     </td>
   </tr>
@@ -69,7 +69,7 @@ These parameters control the information you get back in the [basic/standard met
     <td>integer</td>
     <td>365</td>
     <td>
-      Number of minute activity to include
+      Number of days of activity to include
       <br /><br/><strong>Note:</strong> Must be > 0
     </td>
   </tr>
@@ -78,10 +78,11 @@ These parameters control the information you get back in the [basic/standard met
       <strong>activity</strong>
       <br /><span style="color: #999;">optional</span>
     </td>
-    <td>1</td>
     <td>bit</td>
+    <td>1</td>
     <td>
       Include `activity` and `count` properties in response
+      <br /><br/><strong>Example values:</strong>0,1
       <br /><br/><strong>Note:</strong> Included by default
     </td>
   </tr>
@@ -105,7 +106,7 @@ Divide by 1000).
 
 ### Top Retweeted Tweets<sup>2</sup>
 
-These parameters control the information you get back when requesting the top retweeted tweets in a stream.
+These parameters control the information you get back when requesting the [top retweeted tweets in a stream](#advanced-meta-information-top-retweeted-tweets).
 
 <table>
   <tr>
@@ -285,22 +286,22 @@ The response:
 
 A stream with other advanced features enabled will have far more information contained in its meta response.
 
-  $ curl http://tweetriver.com/gkap8/baseball-constrained/meta.json
+  $ curl http://tweetriver.com/MassRelDemo/things-we-do/meta.json
 
 The response:
 
 ```json
 {
   // standard details
-  "name": "baseball-constrained",
-  "full_name": "gkap8/baseball-constrained",
-  "description": "A stream sourcing a lot of baseball-centric content.",
-  "created_at": "2012-04-03T17:46:21Z",
+  "name": "things-we-do",
+  "full_name": "MassRelDemo/things-we-do",
+  "description": "This is what people are doing on Twitter.",
+  "created_at": "2012-09-26T15:07:07Z",
   "count": {
-    "total": 33203311,
-    "rejected": 0,
-    "pending": 0,
-    "approved": 33203311
+    "total": 6210,
+    "rejected": 314,
+    "pending": 1260,
+    "approved": 4636
   },
   "activity": {
     "daily": {},
@@ -334,10 +335,69 @@ The response:
 }
 ```
 
+### Advanced Meta Information: Top Retweeted Tweets
+
+Get the top retweeted tweets in this stream.
+
+  $ curl http://tweetriver.com/MassRelDemo/things-we-do/meta.json?top_periods=a,20120926,2012092616&top_count=3
+
+The response:
+
+```json
+{
+  // ... for this example, other meta details have been removed ...
+
+  // top retweeted tweets
+  "top": {
+    "20120926": [
+      {
+        // ...top retweeted tweet 1 of the UTC Day Sept 26, 2012...
+      },
+      {
+        // ...top retweeted tweet 2...
+      },
+      {
+        // ...top retweeted tweet 3...
+      }
+    ],
+    "2012092616": [
+      {
+        // ...top retweeted tweet 1 of the 16:00 UTC Hour Sept 26, 2012...
+      },
+      {
+        // ...top retweeted tweet 2...
+      },
+      {
+        // ...top retweeted tweet 3...
+      }
+    ],
+    "a": [
+      {
+        // ...top retweeted tweet 1 of all time in this stream...
+      },
+      {
+        // ...top retweeted tweet 2...
+      },
+      {
+        // ...top retweeted tweet 3...
+      }
+    ]
+  },
+
+  // a description of the time periods that have been returned in the above 'top' object
+  "top_periods": [
+    "a",
+    "20120926",
+    "2012092616"
+  ]
+}
+```
+
+
 
 <sup>1</sup>Our docs only cover the `json` API, but the `xml` endpoint supports the same query parameters as the `json` endpoint and a similar response to the `json` endpoint.
 
-<sup>2</sup>Feature enabled on a stream by stream basis. By default the
+<sup>2</sup>This feature is enabled on a stream by stream basis, by a Mass Relevance administrator. By default, this
 feature is not enabled.
 
 <sup>3</sup>I like Android's docs better for this class than Oracle's.
