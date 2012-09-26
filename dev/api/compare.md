@@ -37,7 +37,7 @@ In this example, the response will sum the total number approved entities in the
   </tr>
 </table>
 
-## Example Response (Standard Comparison)
+## Example Request (Standard Comparison)
 
 This is a standard compare request, asking for the volume percentages for 3 streams. Percentage values max out at 100.
 
@@ -97,7 +97,7 @@ Here is the response:
  }
 ```
 
-## Example Response (Targeted Comparison)
+## Example Request (Targeted Comparison)
 
 This is the same compare request, but instead of comparing the stream volumes against one another, we're comparing against a specific volume target of 5000 entities. Each stream's percentage value is relative to the target.
 

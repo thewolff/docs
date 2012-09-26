@@ -2,6 +2,24 @@
 
 Provides information about and derived from the entities in a stream.
 
+All streams have, by default, a set of meta information captured about them as they live. Most notably, this information includes...
+
+<em>counts</em>:  total number of entities in a stream, split by their moderation state (pending, approved, rejected)
+<em>activity</em>: arrays of per-minute, per-hour, and per-day counts
+
+This stream meta information is commonly used to render such visualizations as counters, progress meters, and social poll results.
+
+Additionally, on a stream-by-stream basis, there are many advanced features that may be turned on (by Mass Relevance administrators). These features include...
+
+<em>top retweeted tweets</em>: (Twitter only) the tweets in a stream that have been retweeted the most
+<em>top hashtags</em>: the hashtags that have been used the most over the last hour
+<em>top links</em>: the URLs that have been referenced the most over the last 18 hours
+<em>top contributors</em>: (Twitter only) the Twitter users whose tweets have been retweeted or replied to the most within the stream
+<em>top topics</em>: a tally of the number of times that specific keyword sets have been mentioned in the stream
+<em>top moments</em>: an extension to top topics, capturing the minutes (moments) when individual topics peaked in activity
+
+This advanced stream meta information is commonly used to render various leaderboard visualizations.
+
 ## Resource URL
 
 http://tweetriver.com/:account/:stream_name/meta.:format
@@ -15,6 +33,8 @@ format: `json`, `xml`<sup>1</sup>
 ## Parameters
 
 ### Standard
+
+These parameters control the information you get back in the basic/standard meta response.
 
 <table>
   <tr>
@@ -83,44 +103,9 @@ Divide by 1000).
   </tr>
 </table>
 
-### Topics<sup>2</sup>
+### Top Retweeted Tweets<sup>2</sup>
 
-*Topics feature needs to be enabled for a stream by Mass Relevance*
-
-<table>
-  <tr>
-    <td>
-      <strong>num_trends</strong>
-      <br /><span style="color: #999;">optional</span>
-    </td>
-    <td>integer</td>
-    <td>30</td>
-    <td>
-      Number of trends to return in response per bucket
-      <br /><br/><strong>Note:</strong> Accepts a string list delimited
-by commas
-    </td>
-  <tr>
-  </tr>
-    <td>
-      <strong>disregard</strong>
-      <br /><span style="color: #999;">optional</span>
-    </td>
-    <td>string</td>
-    <td></td>
-    <td>
-      Exclude trends that match supplied values from buckets while trying to ensure `num_trends`
-is met
-      <br /><br/><strong>Example Values:</strong> obama,romney
-      <br /><br/><strong>Note:</strong> Accepts a string list delimited
-by commas
-    </td>
-  </tr>
-</table>
-
-### Top Tweets<sup>2</sup>
-
-*Top tweets feature needs to be enabled for a stream by Mass Relevance*
+These parameters control the information you get back when requesting the top retweeted tweets in a stream.
 
 <table>
   <tr>
@@ -168,9 +153,56 @@ is right now. "1" is one hour ago.
   </tr>
 </table>
 
-## Top Moments<sup>2</sup>
+### Top Hashtags<sup>2</sup>
 
-*Top moments feature needs to be enabled for a stream by Mass Relevance*
+These parameters control the information you get back when requesting the top discovered hashtags in a stream.
+
+### Top Links<sup>2</sup>
+
+These parameters control the information you get back when requesting the top discovered URLs/links in a stream.
+
+### Top Contributors<sup>2</sup>
+
+These parameters control the information you get back when requesting the top contributors in a stream.
+
+### Top Topics<sup>2</sup>
+
+These parameters control the information you get back when requesting the top topics in a stream.
+
+<table>
+  <tr>
+    <td>
+      <strong>num_trends</strong>
+      <br /><span style="color: #999;">optional</span>
+    </td>
+    <td>integer</td>
+    <td>30</td>
+    <td>
+      Number of trends to return in response per bucket
+      <br /><br/><strong>Note:</strong> Accepts a string list delimited
+by commas
+    </td>
+  <tr>
+  </tr>
+    <td>
+      <strong>disregard</strong>
+      <br /><span style="color: #999;">optional</span>
+    </td>
+    <td>string</td>
+    <td></td>
+    <td>
+      Exclude trends that match supplied values from buckets while trying to ensure `num_trends`
+is met
+      <br /><br/><strong>Example Values:</strong> obama,romney
+      <br /><br/><strong>Note:</strong> Accepts a string list delimited
+by commas
+    </td>
+  </tr>
+</table>
+
+### Top Moments<sup>2</sup>
+
+These parameters control the information you get back when requesting the top moments in a stream.
 
 <table>
   <tr>
@@ -217,6 +249,90 @@ is right now. "1" is one hour ago.
     </td>
   </tr>
 </table>
+
+
+## Example Requests
+
+### Standard Meta Information
+
+To get a stream's basic/standard count and activity rate information...
+
+  $ curl http://tweetriver.com/bdainton/kindle.json
+
+The response:
+
+```json
+{
+  "name": "kindle",
+  "full_name": "bdainton/kindle",
+  "description": "The Twitterverse has some good things to say about the Amazon Kindle.",
+  "created_at": "2010-09-21T19:18:20Z",
+  "count": {
+    "total": 19958828,
+    "rejected": 14238898,
+    "pending": 5704155,
+    "approved": 15775
+  },
+  "activity": {
+    "daily": {},
+    "hourly": {},
+    "minute": {}
+  }
+}
+```
+
+### Advanced Meta Information: Overview
+
+A stream with other advanced features enabled will have far more information contained in its meta response.
+
+  $ curl http://tweetriver.com/gkap8/baseball-constrained/meta.json
+
+The response:
+
+```json
+{
+  // standard details
+  "name": "baseball-constrained",
+  "full_name": "gkap8/baseball-constrained",
+  "description": "A stream sourcing a lot of baseball-centric content.",
+  "created_at": "2012-04-03T17:46:21Z",
+  "count": {
+    "total": 33203311,
+    "rejected": 0,
+    "pending": 0,
+    "approved": 33203311
+  },
+  "activity": {
+    "daily": {},
+    "hourly": {},
+    "minute": {}
+  },
+
+  // top retweeted tweets
+  "top": {},
+
+  // a description of the time periods that have been returned in the above 'top' object
+  "top_periods": [],
+
+  // top hashtags
+  "hashtags": [],
+
+  // top links
+  "links": [],
+
+  // top contributors
+  "contributors": [],
+
+  // top topics
+  "buckets": {},
+
+  // top moments
+  "moments": {},
+
+  // a description of the time periods returned in the above 'moments' object
+  "moments_periods": []
+}
+```
 
 
 <sup>1</sup>Our docs only cover the `json` API, but the `xml` endpoint supports the same query parameters as the `json` endpoint and a similar response to the `json` endpoint.
