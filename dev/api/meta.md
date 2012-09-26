@@ -4,19 +4,19 @@ Provides information about and derived from the entities in a stream.
 
 All streams have, by default, a set of meta information captured about them as they live. Most notably, this information includes...
 
-<em>counts</em>:  total number of entities in a stream, split by their moderation state (pending, approved, rejected)
-<em>activity</em>: arrays of per-minute, per-hour, and per-day counts
+<strong>counts</strong>:  total number of entities in a stream, split by their moderation state (pending, approved, rejected)<br />
+<strong>activity</strong>: arrays of per-minute, per-hour, and per-day counts<br />
 
 This stream meta information is commonly used to render such visualizations as counters, progress meters, and social poll results.
 
 Additionally, on a stream-by-stream basis, there are many advanced features that may be turned on (by Mass Relevance administrators). These features include...
 
-<em>top retweeted tweets</em>: (Twitter only) the tweets in a stream that have been retweeted the most
-<em>top hashtags</em>: the hashtags that have been used the most over the last hour
-<em>top links</em>: the URLs that have been referenced the most over the last 18 hours
-<em>top contributors</em>: (Twitter only) the Twitter users whose tweets have been retweeted or replied to the most within the stream
-<em>top topics</em>: a tally of the number of times that specific keyword sets have been mentioned in the stream
-<em>top moments</em>: an extension to top topics, capturing the minutes (moments) when individual topics peaked in activity
+<strong>top retweeted tweets</strong>: (Twitter only) the tweets in a stream that have been retweeted the most<br />
+<strong>top hashtags</strong>: the hashtags that have been used the most over the last hour<br />
+<strong>top links</strong>: the URLs that have been referenced the most over the last 18 hours<br />
+<strong>top contributors</strong>: (Twitter only) the Twitter users whose tweets have been retweeted or replied to the most within the stream<br />
+<strong>top topics</strong>: a tally of the number of times that specific keyword sets have been mentioned in the stream<br />
+<strong>top moments</strong>: an extension to top topics, capturing the minutes (moments) when individual topics peaked in activity<br />
 
 This advanced stream meta information is commonly used to render various leaderboard visualizations.
 
