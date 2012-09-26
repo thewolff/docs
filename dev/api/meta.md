@@ -106,7 +106,7 @@ Divide by 1000).
 
 ### Top Retweeted Tweets<sup>2</sup>
 
-These parameters control the information you get back when requesting the [top retweeted tweets in a stream](#advanced-meta-information-top-retweeted-tweets).
+These parameters control the information you get back when requesting the [top retweeted tweets](#advanced-meta-information-top-retweeted-tweets) in a stream.
 
 <table>
   <tr>
@@ -156,7 +156,21 @@ is right now. "1" is one hour ago.
 
 ### Top Hashtags<sup>2</sup>
 
-These parameters control the information you get back when requesting the top discovered hashtags in a stream.
+These parameters control the information you get back when requesting the [top discovered hashtags](#advanced-meta-information-top-hashtags) in a stream.
+
+<table>
+  <tr>
+    <td>
+      <strong>num_hashtags</strong>
+      <br /><span style="color: #999;">optional</span>
+    </td>
+    <td>integer</td>
+    <td>10</td>
+    <td>
+      Number of discovered hashtags to return.
+    </td>
+  <tr>
+</table>
 
 ### Top Links<sup>2</sup>
 
@@ -341,6 +355,8 @@ Get the top retweeted tweets in this stream.
 
   $ curl http://tweetriver.com/MassRelDemo/things-we-do/meta.json?top_periods=a,20120926,2012092616&top_count=3
 
+In this example, we're asking for the top 3 retweeted tweets in each for 3 specific time periods: all-time in this stream ('a'), within a specific day (Sept 26, 2012), and within a specific hour of that day (UTC 16:00, Sept 26, 2012).
+
 The response:
 
 ```json
@@ -393,6 +409,45 @@ The response:
 }
 ```
 
+### Advanced Meta Information: Top Hashtags
+
+Get the top discovered hashtags in this stream.
+
+  $ curl http://tweetriver.com/MassRelDemo/things-we-do/meta.json?num_hashtags=5
+
+The <em>count</em> indicated in the response indicates the number of approved entities <em>in the last hour</em> using that hashtag.
+
+The response:
+
+```json
+{
+  // ... for this example, other meta details have been removed ...
+
+  // top hashtags
+  "hashtags": [
+    {
+      "hashtag": "callmeoldfashioned",
+      "count": 2409
+    },
+    {
+      "hashtag": "m312",
+      "count": 911
+    },
+    {
+      "hashtag": "oomf",
+      "count": 385
+    },
+    {
+      "hashtag": "imhappiestwhen",
+      "count": 385
+    },
+    {
+      "hashtag": "lwwy",
+      "count": 380
+    }
+  ]
+}
+```
 
 
 <sup>1</sup>Our docs only cover the `json` API, but the `xml` endpoint supports the same query parameters as the `json` endpoint and a similar response to the `json` endpoint.
