@@ -180,13 +180,42 @@ These parameters control the information you get back when requesting the [top d
 
 This is an advanced feature<sup>2</sup>.
 
-These parameters control the information you get back when requesting the top discovered URLs/links in a stream.
+These parameters control the information you get back when requesting the [top discovered URLs/links](#advanced-meta-information-top-links) in a stream.
+
+<table>
+  <tr>
+    <td>
+      <strong>num_links</strong>
+      <br /><span style="color: #999;">optional</span>
+    </td>
+    <td>integer</td>
+    <td>10</td>
+    <td>
+      Number of discovered URLs/links to return.
+    </td>
+  <tr>
+</table>
 
 ### Top Contributors
 
 This is an advanced feature<sup>2</sup>.
 
-These parameters control the information you get back when requesting the top contributors in a stream.
+These parameters control the information you get back when requesting the [top contributors](#advanced-meta-information-top-contributors) in a stream.
+
+<table>
+  <tr>
+    <td>
+      <strong>num_contributors</strong>
+      <br /><span style="color: #999;">optional</span>
+    </td>
+    <td>integer</td>
+    <td>10</td>
+    <td>
+      Number of contributor user handles return.
+    </td>
+  <tr>
+</table>
+
 
 ### Top Topics
 
@@ -472,6 +501,86 @@ The response:
     {
       "hashtag": "lwwy",
       "count": 380
+    }
+  ]
+}
+```
+
+### Advanced Meta Information: Top Links
+
+Get the top discovered links in this stream.
+
+  $ curl http://tweetriver.com/MassRelDemo/things-we-do/meta.json?num_links=5
+
+The <em>count</em> indicated in the response indicates the number of approved entities <em>in the last 18 hours</em> containing that link.
+
+The response:
+
+```json
+{
+  // ... for this example, other meta details have been removed ...
+
+  // top links
+  "links": [
+    {
+      "count": 2194,
+      "link": "http://youtu.be/jvHE70LZEOA"
+    },
+    {
+      "count": 1079,
+      "link": "http://viddy.it/PGptsX"
+    },
+    {
+      "count": 360,
+      "link": "http://www.massrelevance.com"
+    },
+    {
+      "count": 300,
+      "link": "http://x.co/oFxV"
+    },
+    {
+      "count": 287,
+      "link": "http://twitpic.com/ay2x06"
+    }
+  ]
+}
+```
+
+### Advanced Meta Information: Top Contributors
+
+Get the top contributors in this stream.
+
+  $ curl http://tweetriver.com/MassRelDemo/things-we-do/meta.json?num_contributors=5
+
+The <em>count</em> indicated in the response indicates the number of approved entities <em>in the last week</em> containing that user's handle (@name).
+
+The response:
+
+```json
+{
+  // ... for this example, other meta details have been removed ...
+
+  // top links
+  "contributors": [
+    {
+      "count": 39668,
+      "name": "@techcrunch"
+    },
+    {
+      "count": 21641,
+      "name": "@mashable"
+    },
+    {
+      "count": 8373,
+      "name": "@intel"
+    },
+    {
+      "count": 2768,
+      "name": "@wired"
+    },
+    {
+      "count": 2518,
+      "name": "@drizzled"
     }
   ]
 }
