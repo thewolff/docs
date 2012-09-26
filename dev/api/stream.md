@@ -1,6 +1,6 @@
 # Stream API
 
-Provides approved status entities from a stream sorted from most recently approved to least recently approved (essentially reverse chronological order).
+Provides approved status entities from a stream sorted from most recently approved to least recently approved (in most cases, this is reverse chronological order).
 
 ## Resource URL
 
@@ -37,7 +37,7 @@ format: `json`, `xml`<sup>1</sup>, `atom`<sup>2</sup>, `rss`<sup>2</sup>
     <td>
       Only include status entities approved <em>after</em> supplied status entity `id` biasing towards real-time
       <br /><br />
-      <strong>Note:</strong> API will return from the newest status entity to the supplied entity (but not including) or until `limit` is reached. Either `since_id`, `from_id`, or `since_id` can be used per request.
+      <strong>Note:</strong> API will return from the newest status entity to the supplied entity (but not including) or until `limit` is reached. Usage of `since_id`, `from_id`, and `start` is mutually exclusive; only one of these paramteres may be used in a single request.
     </td>
   </tr>
   <tr>
@@ -61,7 +61,7 @@ format: `json`, `xml`<sup>1</sup>, `atom`<sup>2</sup>, `rss`<sup>2</sup>
     <td>string</td>
     <td></td>
     <td>
-      Only include status entities approved <em>before</em> supplied status entity `id`
+      Only include status entities approved <em>before</em> supplied status entity `id`. This parameter is commonly used to implement 'More' functionality on a stream of content, wherein an end user sees a stream of content, then clicks on a 'More' link to display the next N entities. By supplying the `id` of the last viewed entity, you may request the set of entities that came before it in the stream.
       <br /><br />
       <strong>Note:</strong> Either `since_id`, `from_id`, or `since_id` can be used per request.
     </td>
@@ -151,7 +151,7 @@ are on top.</td>
 
 ## Response
 
-The response is a JSON array. If no tweets are available, then the response will be an empty JSON array. If an error occurs then the response will be empty (whitespace).
+The response is a JSON array. If no entities are available, then the response will be an empty JSON array. If an error occurs then the response will be empty (whitespace).
 
 ## Example Request
 
