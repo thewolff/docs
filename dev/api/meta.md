@@ -18,7 +18,7 @@ Additionally, on a stream-by-stream basis, there are many advanced features that
 <strong>top topics</strong>: a tally of the number of times that specific keyword sets have been mentioned in the stream<br />
 <strong>top moments</strong>: an extension to top topics, capturing the minutes (moments) when individual topics peaked in activity<br />
 
-This [advanced stream meta information](#advanced-meta-information-overview) is commonly used to render various leaderboard visualizations.
+This [advanced stream meta information](#advanced-meta-information) is commonly used to render various leaderboard visualizations.
 
 ## Resource URL
 
@@ -104,7 +104,9 @@ Divide by 1000).
   </tr>
 </table>
 
-### Top Retweeted Tweets<sup>2</sup>
+### Top Retweeted Tweets
+
+This is an advanced feature<sup>2</sup>.
 
 These parameters control the information you get back when requesting the [top retweeted tweets](#advanced-meta-information-top-retweeted-tweets) in a stream.
 
@@ -154,7 +156,9 @@ is right now. "1" is one hour ago.
   </tr>
 </table>
 
-### Top Hashtags<sup>2</sup>
+### Top Hashtags
+
+This is an advanced feature<sup>2</sup>.
 
 These parameters control the information you get back when requesting the [top discovered hashtags](#advanced-meta-information-top-hashtags) in a stream.
 
@@ -172,15 +176,21 @@ These parameters control the information you get back when requesting the [top d
   <tr>
 </table>
 
-### Top Links<sup>2</sup>
+### Top Links
+
+This is an advanced feature<sup>2</sup>.
 
 These parameters control the information you get back when requesting the top discovered URLs/links in a stream.
 
-### Top Contributors<sup>2</sup>
+### Top Contributors
+
+This is an advanced feature<sup>2</sup>.
 
 These parameters control the information you get back when requesting the top contributors in a stream.
 
-### Top Topics<sup>2</sup>
+### Top Topics
+
+This is an advanced feature<sup>2</sup>.
 
 These parameters control the information you get back when requesting the top topics in a stream.
 
@@ -215,7 +225,9 @@ by commas
   </tr>
 </table>
 
-### Top Moments<sup>2</sup>
+### Top Moments
+
+This is an advanced feature<sup>2</sup>.
 
 These parameters control the information you get back when requesting the top moments in a stream.
 
@@ -288,15 +300,31 @@ The response:
     "pending": 5704155,
     "approved": 15775
   },
-  "activity": {
-    "daily": {},
-    "hourly": {},
-    "minute": {}
+  {
+    "minute": {  // arrays of minute-by-minute counts
+      "total": [],
+      "rejected": [],
+      "pending": [],
+      "approved": []
+    },
+    "hourly": { // arrays of hour-by-hour counts
+      "total": [],
+      "rejected": [],
+      "pending": [],
+      "approved": []
+    },
+    "daily": { // arrays of day-by-day counts
+      "total": [],
+      "rejected": [],
+      "pending": [],
+      "approved": []
+    }
   }
 }
 ```
 
-### Advanced Meta Information: Overview
+
+### Advanced Meta Information
 
 A stream with other advanced features enabled will have far more information contained in its meta response.
 
@@ -452,7 +480,7 @@ The response:
 
 <sup>1</sup>Our docs only cover the `json` API, but the `xml` endpoint supports the same query parameters as the `json` endpoint and a similar response to the `json` endpoint.
 
-<sup>2</sup>This feature is enabled on a stream by stream basis, by a Mass Relevance administrator. By default, this
+<sup>2</sup>This feature is enabled on a stream by stream basis, by a Mass Relevance administrator (upon request). By default, this
 feature is not enabled.
 
 <sup>3</sup>I like Android's docs better for this class than Oracle's.

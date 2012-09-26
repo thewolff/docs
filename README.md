@@ -7,7 +7,7 @@ Developer documentation for the Mass Relevance platform.
  * [API](/MassRelevance/docs/blob/master/dev/api/api.md)
    * [Stream](/MassRelevance/docs/blob/master/dev/api/stream.md) **/:account/:stream_name.json**
      * Authenticated actions
-     * Sources
+     * Entity Types
          * Twitter
          * Facebook
          * Google+
@@ -15,12 +15,13 @@ Developer documentation for the Mass Relevance platform.
          * Instagram
          * Custom Messages
     * [Stream Meta](/MassRelevance/docs/blob/master/dev/api/meta.md) **/:account/:stream_name/meta.json**
-      * Basic (.full_name, .name, .description, .created_at)
-      * Activity (.activity)
-      * Count (.count)
-      * Topics (.buckets)
-      * Top Tweets (.top, .top_periods)
-      * Moments (.moments, .moments_periods)
+      * [Standard (Counts and Activity)](/MassRelevance/docs/blob/master/dev/api/meta.md#standard-meta-information)
+      * [Top Retweeted Tweets](/MassRelevance/docs/blob/master/dev/api/meta.md#top-retweeted-tweets)
+      * [Top Hashtags](/MassRelevance/docs/blob/master/dev/api/meta.md#top-hashtags)
+      * [Top Links](/MassRelevance/docs/blob/master/dev/api/meta.md#top-links)
+      * [Top Contributors](/MassRelevance/docs/blob/master/dev/api/meta.md#top-contributors)
+      * [Top Topics](/MassRelevance/docs/blob/master/dev/api/meta.md#top-topics)
+      * [Top Moments](/MassRelevance/docs/blob/master/dev/api/meta.md#top-moments)
     * [Account Streams](/MassRelevance/docs/blob/master/dev/api/account.md) **/:account.json**
     * [Flock](/MassRelevance/docs/blob/master/dev/api/flock.md) **/flock/:account/:flock_name.json**
     * [Compare](/MassRelevance/docs/blob/master/dev/api/compare.md) **/compare.json**
