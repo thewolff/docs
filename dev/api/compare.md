@@ -11,7 +11,7 @@ full_stream_names: a comma-delimited set of full stream names in the format of :
 
 **Example URL:** http://tweetriver.com/compare.json?streams=bdainton/kindle,MassRelDemo/galaxy-topic1,MassRelDemo/galaxy-topic2
 
-In this example, the response will sum the total number approved entities in the 3 specified streams, and provide the percentages that each stream's approved total represents.
+In this example, the response will sum the total number approved entities in the 3 specified streams(bdainton/kindle, MassRelDemo/galaxy-topic1, and MassRelDemo/galaxy-topic2), and provide the percentages that each stream's approved total represents.
 
 ## Standard Parameters
 
@@ -21,7 +21,6 @@ In this example, the response will sum the total number approved entities in the
       <strong>streams</strong>
     </td>
     <td>string</td>
-    <td></td>
     <td>
       Comma-delimited set of full stream names (:account/:stream_name) that will be compared.
     </td>
@@ -32,22 +31,19 @@ In this example, the response will sum the total number approved entities in the
       <br /><span style="color: #999;">optional</span>
     </td>
     <td>integer</td>
-    <td></td>
     <td>
       Instead of returning a stream's percentage of the total, indicate a stream's percentage progress towards the specified target value.
     </td>
   </tr>
 </table>
 
-## Response
+## Example Response (Standard Comparison)
 
-The response is a JSON object indicating, for each specified stream, what percentage of entity volume it represents relative to the total volume.
-
-## Example Request (Standard Comparison)
+This is a standard compare request, asking for the volume percentages for 3 streams. Percentage values max out at 100.
 
     $ curl http://tweetriver.com/compare.json?streams=bdainton/kindle,MassRelDemo/galaxy-topic1,MassRelDemo/galaxy-topic2
 
-This is a standard compare request, asking for the volume percentages for 3 streams. Percentage values max out at 100.
+Here is the response:
 
 ```json
  {
@@ -101,11 +97,13 @@ This is a standard compare request, asking for the volume percentages for 3 stre
  }
 ```
 
-## Example Request (Targeted Comparison)
+## Example Response (Targeted Comparison)
+
+This is the same compare request, but instead of comparing the stream volumes against one another, we're comparing against a specific volume target of 5000 entities. Each stream's percentage value is relative to the target.
 
     $ curl http://tweetriver.com/compare.json?streams=bdainton/kindle,MassRelDemo/galaxy-topic1,MassRelDemo/galaxy-topic2&target=5000
 
-This is the same compare request, but instead of comparing the stream volumes against one another, we're comparing against a specific volume target of 5000 entities. Each stream's percentage value is relative to the target.
+The JSON response:
 
 ```json
 {
