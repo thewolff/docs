@@ -11,7 +11,7 @@ full_stream_names: a comma-delimited set of full stream names in the format of :
 
 **Example URL:** http://tweetriver.com/compare.json?streams=bdainton/kindle,MassRelDemo/galaxy-topic1,MassRelDemo/galaxy-topic2
 
-In this example, the response will sum the total number approved entities in the 3 specified streams(bdainton/kindle, MassRelDemo/galaxy-topic1, and MassRelDemo/galaxy-topic2), and provide the percentages that each stream's approved total represents.
+In this example, the response will sum the total number approved entities in the 3 specified streams (bdainton/kindle, MassRelDemo/galaxy-topic1, and MassRelDemo/galaxy-topic2), and provide the percentages that each stream's approved total represents.
 
 ## Standard Parameters
 
