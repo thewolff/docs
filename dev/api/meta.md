@@ -34,7 +34,7 @@ format: `json`, `xml`<sup>1</sup>
 
 ### Standard
 
-These parameters control the information you get back in the basic/standard meta response.
+These parameters control the information you get back in the [basic/standard meta response](#standard-meta-information).
 
 <table>
   <tr>
