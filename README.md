@@ -6,7 +6,6 @@ Developer documentation for the Mass Relevance platform.
  * [Realtime](/MassRelevance/docs/blob/master/dev/realtime.md)
  * [API](/MassRelevance/docs/blob/master/dev/api/api.md)
    * [Stream](/MassRelevance/docs/blob/master/dev/api/stream.md) **/:account/:stream_name.json**
-     * Authenticated actions
      * Entity Types
          * Twitter
          * Facebook
@@ -25,7 +24,8 @@ Developer documentation for the Mass Relevance platform.
    * [Account Streams](/MassRelevance/docs/blob/master/dev/api/account.md) **/:account.json**
    * [Flock](/MassRelevance/docs/blob/master/dev/api/flock.md) **/flock/:account/:flock_name.json**
    * [Compare](/MassRelevance/docs/blob/master/dev/api/compare.md) **/compare.json**
- * [Stream Management API](/MassRelevance/docs/blob/master/dev/api/stream_management.md)
+ * Management API (authenticated)
+   * [Stream management](/MassRelevance/docs/blob/master/dev/api/stream_management.md) **/streams/:id**
  * Using the API
    * [Polling streams](/MassRelevance/docs/blob/master/dev/usage/polling.md)
    * [Displaying stream entities](/MassRelevance/docs/blob/master/dev/usage/display.md)
