@@ -313,7 +313,7 @@ is right now. "1" is one hour ago.
 
 To get a stream's basic/standard count and activity rate information...
 
-  $ curl http://tweetriver.com/bdainton/kindle.json
+  $ curl http://tweetriver.com/bdainton/kindle/meta.json
 
 The response:
 
